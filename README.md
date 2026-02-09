@@ -13,6 +13,7 @@
 | 5 | [vLLM 使用指南](#5-vllm-使用指南) | vLLM, Qwen2-0.5B-Instruct, ModelScope |
 | 6 | [RAG 问答系统](#6-rag-问答系统) | RAG, Qwen-Plus, Chroma, bge-large-zh |
 | 7 | [问答数据集生成器 — 用大模型记录人生](#7-问答数据集生成器--用大模型记录人生) | PyQt5, DashScope API, Qwen-Plus |
+| 8 | [写作 Agent — 基于网文语料的风格化创作助手](#8-写作-agent--基于网文语料的风格化创作助手) | RAG, LORA, Agent, 网文语料, 双语字幕 |
 
 ---
 
@@ -86,6 +87,16 @@ vLLM（v0.8.3）的安装与使用指南。涵盖从 ModelScope 下载 Qwen2-0.5
 
 ---
 
+## 8. 写作 Agent — 基于网文语料的风格化创作助手
+
+📄 [Writing_Agent_Idea.md](./Writing_Agent_Idea.md)
+
+基于手上的两类数据资产（45 部中文网文语料 + NAS 上持续生成的中日双语字幕），构思的写作 Agent 方案。规划了三个递进方案：RAG 写作助手（快速原型）→ LORA 微调（风格内化）→ Agent 编排（完整创作流程），以及利用双语字幕的日语学习应用扩展方向。
+
+**技术栈**：RAG · LORA · Qwen3 · Chroma · bge-large-zh · Gradio · Agent
+
+---
+
 ## 技术全景
 
 ```
@@ -96,7 +107,7 @@ vLLM（v0.8.3）的安装与使用指南。涵盖从 ModelScope 下载 Qwen2-0.5
 │          │          │          │               │
 │ QA生成(1) │ LoRA(2)  │ vLLM(5)  │ RAG问答(6)     │
 │ 人生记录(7)│DeepSpeed │          │ OCR+LLM(4)    │
-│          │  (3)     │          │               │
+│          │  (3)     │          │ 写作Agent(8)   │
 └──────────┴──────────┴──────────┴────────────────┘
 ```
 
